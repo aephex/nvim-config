@@ -45,3 +45,8 @@ opt.spelllang = 'en_ca'
 -- Look & Feel
 opt.termguicolors = true -- 24bit colours
 opt.background = 'dark'
+
+-- Codeium
+vim.g.codeium_enabled = false
+vim.g.codeium_no_map_tab = true
+vim.g.codeium_idle_delay = 250
