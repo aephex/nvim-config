@@ -11,6 +11,7 @@ autocmd({ "VimResized" }, {
 
 -- Stop commenting code from creating indents regardless of filetype
 autocmd("FileType", {
+  pattern = "",
   command = "setlocal indentkeys-=0#"
 })
 
