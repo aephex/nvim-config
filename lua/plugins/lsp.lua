@@ -85,7 +85,7 @@ return {
       lsp.setup_nvim_cmp({
         preselect = 'none',
         completion = {
-          completeopt = 'menuone,noinsert,noselect'
+          completeopt = 'menu,menuone,noinsert,noselect'
         },
       })
 
