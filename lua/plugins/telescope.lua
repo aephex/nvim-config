@@ -3,19 +3,29 @@ return {
   version = '0.1.2',
   dependencies = {
     'nvim-lua/plenary.nvim',
-    'cljoly/telescope-repo.nvim',
     'ahmedkhalf/project.nvim',
+    'cljoly/telescope-repo.nvim',
     'nvim-telescope/telescope-file-browser.nvim',
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
   config = function()
     local ts = require('telescope')
+    local projects = require('project_nvim')
 
-    local enabled_extensions = {
-      'file_browser',
-      'projects',
-      'repo',
-      'fzf'
+    projects.setup {
+      exclude_dirs = {
+        '~/',
+        '~/projects',
+        '~/.config/nvim/lua/*',
+        '~/*/vendor/*',
+      },
+      patterns = {
+        '.git',
+        'init.lua',
+        '.envrc',
+        '.project_root'
+      },
+      detection_methods = { 'pattern', 'lsp' }
     }
 
     ts.setup {
@@ -41,6 +51,13 @@ return {
           find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" }
         }
       }
+    }
+
+    local enabled_extensions = {
+      'file_browser',
+      'projects',
+      'repo',
+      'fzf'
     }
 
     for _, extension in pairs(enabled_extensions) do
