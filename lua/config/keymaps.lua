@@ -74,7 +74,6 @@ map('n', '<leader>sc', tsbuiltin.git_files, { desc = '[s]earch [c]ommitted files
 map('n', '<leader>sw', tsbuiltin.grep_string, { desc = '[s]earch current [w]ord' })
 map('n', '<leader>sg', tsbuiltin.live_grep, { desc = '[s]earch with [g]rep' })
 map('n', '<leader>sp', telescope.extensions.projects.projects, { desc = '[s]earch [p]rojects' })
-
 map('n', '<leader>sh', tsbuiltin.help_tags, { desc = '[s]eek [h]elp' })
 map("n", "<leader>th", tsbuiltin.highlights, { desc = '[t]elescope [h]ighlights' })
 
