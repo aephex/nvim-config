@@ -21,6 +21,7 @@ autocmd("BufEnter", {
   command = "set fo-=c fo-=r fo-=o"
 })
 
+-- Auto-enable spelling for text files
 autocmd("Filetype", {
   pattern = { "gitcommit", "markdown", "text" },
   callback = function()
