@@ -46,12 +46,13 @@ map("v", "J", ":m '>+1<CR>gv=gv", { desc = 'Move selection down' })
 map("v", "K", ":m '<-2<CR>gv=gv", { desc = 'Move selection up' })
 
 -- Notes / KB / Wiki / Todo
--- All assume you are in the correct CWD
--- use Telescope/Projects keybinds below to ensure this
--- or set it with something like `:cd %:h` from an existing note
+-- All assume you are in the correct CWD.
+-- Use Telescope/Projects keybinds below to ensure this
+-- or set it with something like `:cd %:h` from an existing note.
+-- It will replace everything except the first line and then try to format ('cause useless titles).
 map('n', '<leader>gn', ":find index.md<CR><ESC>", { desc = '[g]o to [n]otes index' })
 map('n', '<leader>nn', ":tabe .md | silent !mkdir -p %:p:h<C-b><C-Right><Right>", { desc = '[n]ew [n]ote' })
-map('n', '<leader>ni', "i<C-r>=map(glob('**/*', 0, 1), 'join([\"-\", v:val])')<CR><ESC>",
+map('n', '<leader>ni', "gg\"zddVGdi<C-r>=map(glob('**/*', 0, 1), 'join([\"-\", v:val])')<CR><ESC>gg\"zP:lua vim.lsp.buf.format()<CR>",
   { desc = 'generate [n]otes [i]ndex inline' })
 
 -- Quality of Life
