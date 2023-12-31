@@ -2,7 +2,7 @@ local augroup = vim.api.nvim_create_augroup
 local autocmd = vim.api.nvim_create_autocmd
 
 -- resize splits if window got resized
-autocmd({ "VimResized" }, {
+autocmd("VimResized", {
   group = augroup("resize_splits", { clear = true }),
   callback = function()
     vim.cmd("tabdo wincmd =")
@@ -27,5 +27,21 @@ autocmd("Filetype", {
   callback = function()
     vim.opt_local.wrap = true
     vim.opt_local.spell = true
+  end
+})
+
+-- Make active window more visible
+autocmd("WinEnter", {
+  pattern = "",
+  callback = function()
+    vim.opt_local.relativenumber = true
+    vim.opt_local.cursorline = true
+  end
+})
+autocmd("WinLeave", {
+  pattern = "",
+  callback = function()
+    vim.opt_local.relativenumber = false
+    vim.opt_local.cursorline = false
   end
 })
