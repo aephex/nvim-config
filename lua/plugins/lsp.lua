@@ -5,9 +5,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     lazy = true,
     dependencies = {
-      {
-        "williamboman/mason.nvim",
-      },
+      { "williamboman/mason.nvim" },
       { "williamboman/mason-lspconfig.nvim" },
       {
         "neovim/nvim-lspconfig",
