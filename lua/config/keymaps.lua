@@ -22,9 +22,8 @@ map("n", "gX", "yiW:!google-chrome-stable <cfile><CR>", { desc = 'Open URL with 
 map("n", "<leader>q", cmd.bdelete, { desc = 'Close current buffer' })
 map("n", "<leader>Q", ":bdelete!<CR>", { desc = 'Force close current buffer' })
 map("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true, desc = 'Make current file executable' })
--- map("n", "<F3>", cmd.E, { desc = 'Open Explorer (NetRW)' })
+map("n", "<F3>", cmd.E, { desc = 'Open Explorer (NetRW)' })
 -- map("n", "<F3>", telescope.extensions.file_browser.file_browser, { desc = 'Open Explorer (Telescope)' })
-map("n", "<F3>", cmd.RnvimrToggle, { desc = 'Open Explorer (Ranger)' })
 map('n', '<leader>cc', ':ColorizerToggle<CR>', { desc = '[c]olor [c]odes toggle' })
 
 -- Codeium
